@@ -42,7 +42,7 @@ const Deck = ({ num_choices, frontPair, backPair, quizId, updateProgress, setFro
 	}));
 
 	const sendChoice = payload => {
-		fetch('http://ec2-54-252-205-131.ap-southeast-2.compute.amazonaws.com/api/quiz-vote', {
+		fetch('http://localhost:4000/api/quiz-vote', {
 			method: 'POST',
 					headers: {
 						'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ const Deck = ({ num_choices, frontPair, backPair, quizId, updateProgress, setFro
 	};
 
 	const getMatchUp = () => {
-		fetch('http://ec2-54-252-205-131.ap-southeast-2.compute.amazonaws.com//api/quiz-matchup/' + quizId)
+		fetch('http://localhost:4000//api/quiz-matchup/' + quizId)
 			.then(response => response.json())
 			.then(data => {
 				// console.log(data);
